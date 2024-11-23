@@ -1,6 +1,6 @@
 window.addEventListener('message', (event) => {
   // Make sure the message comes from the expected origin
-  if (event.origin !== 'https://tradeverse.it' && event.origin !== 'https://www.tradeverse.it') {
+  if (event.origin !== 'https://my.tradeverse.it' && event.origin !== 'https://www.tradeverse.it' && event.origin !== 'https://tradeverse.it') {
       console.error('Received message from unauthorized origin:', event.origin);
       return;
   }
