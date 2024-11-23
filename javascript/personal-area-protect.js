@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Retrieve the token from localStorage
   const token = getCookie("jwt");
   const current_plan = getCookie("current_plan");
-  // console.log("Token from localStorage:", token);  // Add this to verify token existence
+  console.log(token);  // Add this to verify token existence
 
   async function validateToken(token) {
       try {
