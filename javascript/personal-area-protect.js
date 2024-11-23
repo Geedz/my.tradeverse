@@ -1,13 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Retrieve the token from localStorage
-  function getCookie(name) {
-    let value = "; " + document.cookie;
-    let parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-  }
-
-  // Retrieve the token from the cookie
-  const token = getCookie("authToken");
+  const token = localStorage.getItem("jwt");
   const current_plan = localStorage.getItem("current_plan")
   // console.log("Token from localStorage:", token);  // Add this to verify token existence
 
@@ -18,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
               headers: {
                   'Content-Type': 'application/json',
                   'Authorization': `Bearer ${token}`
-              },
-              credentials: 'include' // This allows cookies to be sent/received in cross-origin requests
+              }
           });
 
           if (!response.ok) {
