@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Retrieve the token from localStorage
-  const token = localStorage.getItem("jwt");
+  function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  }
+
+  // Retrieve the token from the cookie
+  const token = getCookie("authToken");
   const current_plan = localStorage.getItem("current_plan")
   // console.log("Token from localStorage:", token);  // Add this to verify token existence
 

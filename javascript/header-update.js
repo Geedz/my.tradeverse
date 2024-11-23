@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", async function () {
   // Assume you already have the token stored somewhere, e.g., in localStorage
-    const token = localStorage.getItem("jwt");
+    function getCookie(name) {
+      let value = "; " + document.cookie;
+      let parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    // Retrieve the token from the cookie
+    const token = getCookie("authToken");
   
     // Check if the token exists
     if (!token) {
