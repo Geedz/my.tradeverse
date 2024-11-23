@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
       // Make a POST request to the PHP endpoint
-      const response = await fetch('http://localhost/tradeverse/backend/php/progress_wheel.php', {
+      const response = await fetch('https://api.tradeverse.it/php/progress_wheel.php', {
           method: 'POST',
           mode: "cors",
           headers: {

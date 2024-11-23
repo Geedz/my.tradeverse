@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   try {
-    const response = await fetch('http://localhost/tradeverse/backend/php/get_affiliates.php', {
+    const response = await fetch('https://api.tradeverse.it/php/get_affiliates.php', {
       method: 'POST',
       mode: "cors",
       headers: {
