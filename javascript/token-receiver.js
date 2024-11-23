@@ -1,26 +1,31 @@
-window.addEventListener('message', (event) => {
-  // Make sure the message comes from the expected origin
-  if (event.origin !== 'https://my.tradeverse.it' && event.origin !== 'https://www.tradeverse.it' && event.origin !== 'https://tradeverse.it') {
-      console.error('Received message from unauthorized origin:', event.origin);
-      return;
-  }
-
-  // Handle the received token
-  if (event.data && event.data.token && event.data.current_plan) {
-      const token = event.data.token;
-      const current_plan = event.data.current_plan;
-      console.log("Received token from tradeverse.it:", token);
-      console.log("Received plan from tradeverse.it:", current_plan);
-      localStorage.setItem(token);
-      localStorage.setItem(current_plan);
-      // You can use the token here, e.g., store it or use it for authenticated requests
-  }
-});
-
-// Request the token from tradeverse.it when the iframe loads
-window.onload = function() {
+window.addEventListener('DOMContentLoaded', () => {
   const iframe = document.getElementById('tokenIframe');
+
   iframe.onload = function() {
+      console.log("Iframe loaded, sending getToken request...");
       iframe.contentWindow.postMessage('getToken', 'https://tradeverse.it');
   };
-};
+
+  window.addEventListener('message', (event) => {
+      const allowedOrigins = [
+          'https://tradeverse.it',
+          'https://www.tradeverse.it',
+          'https://my.tradeverse.it',
+          'https://plans.tradeverse.it',
+          'https://admin.tradeverse.it'
+      ];
+
+      if (!allowedOrigins.includes(event.origin)) {
+          console.error('Received message from unauthorized origin:', event.origin);
+          return;
+      }
+
+      // Handle received token and current_plan
+      if (event.data && event.data.token && event.data.current_plan) {
+          console.log("Received token from helper:", event.data.token);
+          console.log("Received current plan from helper:", event.data.current_plan);
+          localStorage.setItem("jwt", event.data.token);  
+          localStorage.setItem("current_plan", event.data.current_plan);  
+      }
+  });
+});

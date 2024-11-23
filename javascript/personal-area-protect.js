@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (current_plan === null) {
     window.location.href = "https://tradeverse.it/login.html";
   } 
-  else if (current_plan !== "Settimanale" && current_plan !== "Mensile" && current_plan !== "Annuale") {
+  else if (current_plan !== "Settimanale" && current_plan !== "Mensile" && current_plan !== "Annuale" && current_plan !== "A Vita") {
     window.location.href = "https://tradeverse.it/no-plan.html";
   } else {
     if (!token) {
