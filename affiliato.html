@@ -4,12 +4,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard</title>
+    <title>Affiliazioni</title>
     <link rel="icon" type="image/x-icon" href="/assets/logo.png">
     <link href="styles/my-header.css" rel="stylesheet">
     <link href="styles/my-sidebar.css" rel="stylesheet">
     <link href="styles/general.css" rel="stylesheet">
-    <link href="styles/dashboard.css" rel="stylesheet">
+    <link href="styles/affiliato.css" rel="stylesheet">
     <link href="styles/personal-area.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,115 +82,87 @@
       </div>
     </nav>
     <main class="main">
-      <div onclick="location.href='corsi.html';" class="dash-container" style="justify-content: end;" >
-        <div class="progress-wheel">
-          <div class="circular-progress">
-            <span class="progress-value">0/60</span>
-          </div>
-        </div>
-        <div class="difficulty-boxes-container">
-          <div class="difficulty-box">
-            <p class="difficulty-title">
-              Easy
-            </p>
-            <p id="easy-title">
-              0/20
-            </p>
-          </div>
-          <div class="difficulty-box">
-            <p class="difficulty-title">
-              Medium
-            </p>
-            <p id="medium-title">
-              0/20
-            </p>
-          </div>
-          <div class="difficulty-box">
-            <p class="difficulty-title">
-              Hard
-            </p>
-            <p id="hard-title">
-              0/20
-            </p>
-          </div>
+      <div id="pos-alert" class="pos-alert">
+        <div class="pos-alert-content">
+          <ion-icon name="clipboard-outline"></ion-icon>
+          <p class="alert" id="alert">Link Copiato con Successo</p>  
         </div>
       </div>
-      <div class="dash-container">
-        <div class="badge-text-wrapper">
-          <div class="badges-text-container">
-            <p>Rank Attuale:</p>
-            <h2 id="current-rank"></h2>
+      <section class="aff-data">
+        <div class="aff-data-container">
+          <div onclick="window.location.href='profilo.html'" class="user-container">
+            <div class="pfp-details">
+              <div>
+                <p class="pfp-secondary"></p>
+              </div>
+              <h2 id="user-name-surname"></h2>       
+            </div>
+            <div class="email-container">
+              <p>Email:<span class="detail" id="email"></span></p>
+              <p>Piano Attuale:<span class="detail" id="current_plan"></span></p>
+              <p>Prossimo Rinnovo:<span class="detail" id="renewal_date"></span></p>
+            </div>
           </div>
-          <div class="next-badge-container">
-            <p>Prossimo Rank</p>
-            <h2>Maestro del Verse</h2>
-          </div>
-        </div>
-        <div class="image-container">
-          <p>Badge</p>
-        </div>
-    </div>
-      <div onclick="location.href='affiliato.html';" class="dash-container-long">
-        <div class="affiliate-info">
-          <div class="invited-people">
-            <h2>
-              Persone invitate:
-            </h2>
-            <p class="affiliate-info-amount">
-              <ion-icon name="people-outline"></ion-icon>
-              <span id="affiliates"></span>
-            </p>
-            <span class="subtitle-detail">Affiliati</span>
-          </div>
-          <div class="vl"></div>
-          <div class="affiliate-earnings">
-            <h2>
-              Guadagni dall'affiliazione:
-            </h2>
-            <p id="affiliate-earnings" class="affiliate-info-amount">
-            </p>    
-            <span class="subtitle-detail">Guadagnati</span>    
-          </div>  
-        </div>
-      </div>
-      <div class="dash-container">
-        <div class="syncverse-info">
-          <div class="syncverse-pnl" style="margin-right: 40px;">
-            <h2>
-              SyncVerse P/L:
-            </h2>
-            <p class="syncverse-info-amount">
-              P/L: <span id="pnl-text" class="syncverse-info-pnl-amount"></span>
-            </p>          
-          </div>
-          <div class="vl"></div>
-          <div class="syncverse-trades-took" style="margin-left: 30px;">
-            <h2>
-              Trade Fatti:
-            </h2>
-            <p class="syncverse-info-amount">
-              Trade: <span id="trades-took" class="syncverse-info-pnl-amount"></span>
-            </p>          
+          <div id="aff-link-container" class="aff-link-container">
+            <h2>Link Affiliato:</h2>
+            <p id="aff-link"></p>
+            <div id="hoverPopup" class="popup">Clicca per copiare il link!</div>
           </div>
         </div>
-      </div>
-      <div class="dash-container">
-        <div class="syncverse-graph">
-          <div class="syncverse-graph">
-            <canvas id="syncversePnlChart"></canvas>
-          </div>                      
+        <div class="dash-container-long">
+          <div class="affiliate-info">
+            <div class="invited-people">
+              <h2>
+                Persone invitate:
+              </h2>
+              <p class="affiliate-info-amount">
+                <ion-icon name="people-outline"></ion-icon>
+                <span id="affiliate-count"></span>
+              </p>
+              <span class="subtitle-detail">Affiliati</span>
+            </div>
+            <div class="vl"></div>
+            <div class="affiliate-earnings">
+              <h2>
+                Guadagni dall'affiliazione:
+              </h2>
+              <p id="affiliate-earnings" class="affiliate-info-amount">
+              </p>    
+              <span class="subtitle-detail">Guadagnati</span>    
+            </div>  
+          </div>
         </div>
-    </div>
-      </div>
+      </section>
+      <section class="aff-table-container">
+        <h2>Tabella Affiliati</h2>
+        <table id="affiliates-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable('name', this)">Affiliato <ion-icon id="sort-icon-name" class="sort-icon" name="chevron-down-outline"></ion-icon></th>
+              <th onclick="sortTable('email', this)">Email<ion-icon id="sort-icon-email" class="sort-icon" name="chevron-down-outline"></ion-icon></th>
+              <th>Piano</th>
+              <th onclick="sortTable('earnings', this)">Guadagni (€)<ion-icon id="sort-icon-earnings" class="sort-icon" name="chevron-down-outline"></ion-icon></th>
+            </tr>
+          </thead>
+          <tbody id="affiliates-table-body">
+              <!-- Table rows will be populated dynamically using JavaScript -->
+          </tbody>
+      </table>        
+      <div id="pagination">
+            <!-- Pagination buttons will be dynamically added here -->
+      </div>  
+      </section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="javascript/pnlgraph.js" defer></script>    
     <script src="javascript/personal-area-protect.js"></script>    
-    <script src="javascript/progress-wheel.js"></script>    
-    <script src="javascript/dashboard-update.js"></script>    
-    <script src="javascript/header-update.js"></script>    
     <script src="javascript/logout.js"></script>    
+    <script src="javascript/header-update.js"></script>    
+    <script src="javascript/affiliate-update.js"></script>  
+    <script src="javascript/copytoclipboard.js"></script>
+    <script src="javascript/hover-popup.js"></script>
+    <script src="javascript/aff-table-populate.js"></script>
+    <script src="javascript/sort-table.js"></script>
   </body>
 </html>
