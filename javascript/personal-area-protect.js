@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
               headers: {
                   'Content-Type': 'application/json',
                   'Authorization': `Bearer ${token}`
-              }
+              },
+              credentials: 'include' // This allows cookies to be sent/received in cross-origin requests
           });
 
           if (!response.ok) {
