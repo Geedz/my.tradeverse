@@ -1,7 +1,22 @@
+function getCookie(name) {
+  let nameEQ = name + "=";
+  let cookiesArray = document.cookie.split(';');
+  for (let i = 0; i < cookiesArray.length; i++) {
+      let cookie = cookiesArray[i];
+      while (cookie.charAt(0) === ' ') {
+          cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(nameEQ) === 0) {
+          return cookie.substring(nameEQ.length, cookie.length);
+      }
+  }
+  return null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Retrieve the token from localStorage
-  const token = localStorage.getItem("jwt");
-  const current_plan = localStorage.getItem("current_plan")
+  const token = getCookie("jwt");
+  const current_plan = getCookie("current_plan");
   // console.log("Token from localStorage:", token);  // Add this to verify token existence
 
   async function validateToken(token) {
