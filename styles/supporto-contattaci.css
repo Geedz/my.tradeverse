@@ -1,52 +1,13 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 240px;
-  padding-bottom: 110px;
 
-}
 
-.contact-center {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  vertical-align: middle;
-  align-items: center;
-  padding: 0px 60px;
-  height: 680px;
-  width:100%
-}
-
-.contact-center .logo-scritta {
-  position:absolute;
-  width: 320px;
-  right: 280px;
-  bottom: 0;
-}
-
-.contact-center .wrapper {
-  position: relative;
-  display: flex;
-  width: 540px;
-  height: 620px;
-  left: 10%;
-  background: transparent;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-
-.wrapper .form-box {
-  width: 100%;
+.wrapper .contact-form {
   height: 100%;
   padding: 0px;
   margin-bottom: 40px;
   margin-top: 100px;
 }
 
-.form-box h2 {
+.contact-form h2 {
   font-size: 60px;
   font-weight: bold;
   color: #8c07dd;
@@ -56,13 +17,13 @@ body {
   pointer-events: none;
 }
 
-.form-box .input-box {
+.contact-form .input-box {
   position: relative;
   width: 100%;
   height: 50px;
 }
 
-.form-box .input-box-short {
+.contact-form .input-box-short {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -164,42 +125,10 @@ body {
   font-size: 30px;
 }
 
-.navigation-bottom {
-  position: absolute;
-  left: 62px;
-  bottom: 50px;
-}
-
-.navigation-bottom a {
-  font-size: 20px;
-  font-weight: 100;
-  color: #8C07DD;
-  text-decoration: none;
-  user-select: none;
-}
-
-.navigation-bottom a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background: #8C07DD;
-  border-radius: 5px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .3s;
-}
-
-.navigation-bottom a:hover::after {
-  transform-origin: left;
-  transform: scaleX(1);
-}
-
 .short-input-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 input::-webkit-outer-spin-button,
@@ -213,23 +142,21 @@ textarea {
   resize:none;
 }
 
-.contact-center .vl {
+.vl {
   position: absolute;
   left: 50%;
   bottom: 50%;
   width: 3px;
   border-left: 3px solid #a214eeaf;
   border-radius: 2px;
-  height: 640px;
+  height: 440px;
   user-select: none;
-  top: 50px;
+  top: 130px;
   right: 160px;
 }
 
 .our-contacts {
   height: 600px;
-  width: 39%;
-  position: relative;
   display: flex;
   flex-direction: row;
   vertical-align: center;
