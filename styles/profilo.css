@@ -1,0 +1,46 @@
+.main {
+  position: relative;
+  top: 110px;
+  left: 300px;
+  width: 1603px;
+  display: flex;
+  z-index: 0;
+  padding: 20px 40px;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+
+}
+
+.aff-data-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 60%;
+  height: 300px;
+  border-radius: 60px;
+  box-shadow: 0 0 20px rgba(0,0,0,.4);
+  padding: 40px 60px;
+  margin: 20px;
+  z-index: 10;
+  justify-content: start;
+  background: rgba(255, 255, 255, .65);
+  backdrop-filter: blur(50px);
+  cursor: pointer;
+  transition: margin .15s,
+              border .15s,
+              box-shadow .15s;
+}
+
+.user-container:hover {
+  border:solid 2px #8C07DD;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0px 8px 30px rgba(0,0,0,.3);
+}
+

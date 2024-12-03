@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: Poppins">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link href="styles/my-header.css" rel="stylesheet">
+    <link href="styles/my-sidebar.css" rel="stylesheet">
+    <link href="styles/general.css" rel="stylesheet">
+    <link href="styles/support.css" rel="stylesheet">
+    <link href="styles/personal-area.css" rel="stylesheet">
+    <link href="/styles/supporto-contattaci.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img class="tradeverse-topleft-my" src="assets/tradeverse-gradient.png"></a>
+      <img src="assets/logo.png" class="logo-scritta">
+      <div class="dropdown-container">
+        <button id="account-btn" class="account-btn"></button>
+        <div class="dropdown-content">
+          <a id="logout-btn" href="#" class="dropdown-item" style="color: #fc8919; border-color: #fc8919;">Log out</a>
+        </div>     
+      </div>
+    </header>
+    <nav class="sidebar">
+      <div class="pfp-container">
+        <p class="pfp"></p>
+      </div>
+      <div class="tabs">
+        <a href="index.html">
+          <div class="side-container">
+            <ion-icon name="home-outline"></ion-icon>
+            <h2 class="sidetab-title">Dashboard</h2>
+          </div>  
+        </a>
+        <a href="corsi.html">
+          <div class="side-container">
+          <ion-icon name="book-outline"></ion-icon>
+          <h2 class="sidetab-title">Corsi</h2>
+          </div>
+        </a>
+        <a href="syncverse.html">
+          <div class="side-container">
+            <ion-icon name="sync-circle-outline"></ion-icon>
+            <h2 class="sidetab-title">SyncVerse</h2>
+          </div>
+        </a>
+        <a href="liveroom.html">
+          <div class="side-container">
+            <ion-icon name="videocam-outline"></ion-icon>
+            <h2 class="sidetab-title">Live Room</h2>
+          </div>
+        </a>
+        <a href="eduverse.html">
+          <div class="side-container">
+          <ion-icon name="school-outline"></ion-icon>
+          <h2 class="sidetab-title">EduVerse</h2>
+          </div>
+        </a>
+        <a href="community.html">
+          <div class="side-container">
+            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+            <h2 class="sidetab-title">Community</h2>
+          </div>
+        </a>
+        <a href="affiliato.html">
+          <div class="side-container">
+            <ion-icon name="cash-outline"></ion-icon>
+            <h2 class="sidetab-title">Affiliazione</h2>
+          </div>  
+        </a>
+        <a href="supporto.html">
+          <div class="side-container">
+            <ion-icon name="information-outline"></ion-icon>
+            <h2 class="sidetab-title">Supporto</h2>
+          </div>  
+        </a>
+      </div>
+    </nav>
+    <main class="main">
+      <div id="dark-overlay" class="dark-overlay" style="display:none;">
+        <div id="answer-modal" class="answer-modal">
+          <div class="num">
+            <p id="modal-num">
+            </p>       
+          </div>
+          <ion-icon id="modal-close" name="close-outline"></ion-icon>
+          <div class="modal-answer">
+            <p id="modal-answer">
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="FAQ">
+        <h1>Domande Frequenti</h1>
+      </div>
+      <div class="questions-board">
+        <div id="q1" class="question-container">
+          <div class="num">
+            <p>
+              1.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Che cos'è TradeVerse?
+            </p>
+          </div>
+        </div>
+        <div id="q2" class="question-container">
+          <div class="num">
+            <p>
+              2.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Come funziona SyncVerse?
+            </p>
+          </div>
+        </div>  
+        <div id="q3" class="question-container">
+          <div class="num">
+            <p>
+              3.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Come posso guadagnare con il programma di affiliazione?
+            </p>
+          </div>
+        </div>  
+        <div id="q4" class="question-container">
+          <div class="num">
+            <p>
+              4.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Come funziona il sistema di rank?
+            </p>
+          </div>
+        </div>  
+        <div id="q5" class="question-container">
+          <div class="num">
+            <p>
+              5.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Cosa succede se ho bisogno di aiuto?
+            </p>
+          </div>
+        </div>  
+        <div id="q6" class="question-container">
+          <div class="num">
+            <p>
+              6.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Cosa succede se un trade copiato genera una perdita?
+            </p>
+          </div>
+        </div>  
+        <div id="q7" class="question-container">
+          <div class="num">
+            <p>
+              7.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Posso annullare il mio abbonamento?
+            </p>
+          </div>
+        </div>  
+        <div id="q8" class="question-container">
+          <div class="num">
+            <p>
+              8.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Ci sono costi nascosti?
+            </p>
+          </div>
+        </div>  
+        <div id="q9" class="question-container">
+          <div class="num">
+            <p>
+              9.
+            </p>
+          </div>
+          <div class="question">
+            <p>
+              Che tipo di supporto offre TradeVerse?
+            </p>
+          </div>
+        </div>  
+      </div>
+      <div class="contact-form-container">
+        <div class="form">
+          <div class="contact-form">
+            <h2>
+              Contattaci
+            </h2>
+            <form action="form-details.txt" method="post">
+              <div class="short-input-container">
+                <div class="input-box-short">
+                  <input id="namefield" name="namefield" class="input-field-short" 
+                        type="text" required 
+                        placeholder="Nome*">
+                  <label for="namefield">Nome*</label>
+                </div>
+                <div class="input-box-short">
+                  <input id="surnamefield" name="surnamefield" class="input-field-short" 
+                        type="text" required 
+                        placeholder="Cognome*">
+                  <label for="surnamefield">Cognome*</label>
+                </div>  
+              </div>
+              <div class="input-box">
+                <input id="userfield" name="userfield" class="input-field" 
+                      type="email" required 
+                      placeholder="Email*"
+                      autocomplete="on">
+                <label for="userfield">Email*</label>
+              </div>
+              <div class="input-box">
+                <textarea id="contactfield" name="contactfield" class="input-field-contact" 
+                      type="text" required 
+                      placeholder="Descrivi il motivo per contattarci..."
+                      autocomplete="off"
+                      maxlength="200"
+                      minlength="20"></textarea>
+                <label for="contactfield">Descrivi il motivo per contattarci...</label>
+              </div>
+              <button type="submit" class="contact-submit-form">
+                INVIA
+              </button>  
+            </form>    
+  
+          </div>
+        </div>  
+        <div class="other-contacts">
+          <div class="vl"></div>
+          <div class="our-contacts">
+            <div class="phone-mail-contacts">
+              <div class="contact-container">
+                <span class="icon"><ion-icon name="logo-whatsapp">
+                </ion-icon></span>
+                <h2>&#43;39 324 077 9550</h2>  
+              </div>
+              <div class="contact-container">
+                <span class="icon"><ion-icon name="mail-outline">
+                </ion-icon></span>         
+                <a href="mailto:tradeverseacademy@gmail.com" target="_blank">
+                  <h2>tradeverseacademy@gmail.com</h2></a>
+              </div>
+            </div>  
+        </div>
+      </div>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="javascript/pnlgraph.js" defer></script>    
+    <script src="javascript/personal-area-protect.js"></script>    
+    <script src="javascript/progress-wheel.js"></script>    
+    <script src="javascript/dashboard-update.js"></script>    
+    <script src="javascript/header-update.js"></script>    
+    <script src="javascript/logout.js"></script>    
+    <script src="javascript/support-modal.js"></script>    
+  </body>
+</html>
