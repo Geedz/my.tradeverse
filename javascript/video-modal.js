@@ -12,7 +12,7 @@ video_urls = {
 
 const vid1 = document.getElementById("vid1");
 const vid2 = document.getElementById("vid2");
-const vid2 = document.getElementById("vid3");
+const vid3 = document.getElementById("vid3");
 const frame = document.getElementById("video-frame");
 const overlay = document.getElementById("dark-overlay");
 const modal = document.getElementById("frame-container");
