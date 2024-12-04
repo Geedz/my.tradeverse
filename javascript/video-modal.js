@@ -9,7 +9,7 @@ video_urls = {
   "vid1": "https://player.vimeo.com/video/1035034592?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
   "vid2": "https://player.vimeo.com/video/1035799160?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
   "vid3": "https://player.vimeo.com/video/1035849175?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-  "vid3": "https://player.vimeo.com/video/1036046008?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+  "vid4": "https://player.vimeo.com/video/1036046008?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
 }
 
 const vid1 = document.getElementById("vid1");
